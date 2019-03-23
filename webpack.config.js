@@ -1,4 +1,5 @@
 const path = require('path');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development', //设置环境，有development和production两个值，production是生产环境，代码会被压缩
     entry: {
@@ -12,14 +13,24 @@ module.exports = {
                 // 若我们用原来的名称则用这种方式，【ext]就是文件的后缀
                 options: {
                     name: '[name]_[hash].[ext]',
-                    outputPath: '/images/', //把图片打包的指定的目录下
+                    outputPath: 'images/', //把图片打包的指定的目录下
                     limit: 1024
                 }
             }
+        },
+        {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
         }]
     }, 
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            filename: 'index.html',
+            template: './src/index.html'
+        })
+    ]
 }
