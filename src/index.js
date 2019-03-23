@@ -1,6 +1,6 @@
 // import avatar from './avatar.jpg';
 const avatar = require('./avatar.jpg')
-import './index.css';
+import './index.scss';
 console.log('ddd', avatar)
 var img=new Image();
 img.src=avatar;
