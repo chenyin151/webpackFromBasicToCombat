@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/lib/loader.js!./node_modules/postcss-loader/src/index.js!./src/avatar.scss":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/lib/loader.js!./node_modules/postcss-loader/src!./src/avatar.scss ***!
+  \****************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body ._1PARbmhE0bV8m3NRO67HU- {\\n  background: red; }\\n\", \"\"]);\n\n// Exports\nexports.locals = {\n\t\"abc\": \"_1PARbmhE0bV8m3NRO67HU-\"\n};\n\n//# sourceURL=webpack:///./src/avatar.scss?./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/lib/loader.js!./node_modules/postcss-loader/src");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/lib/loader.js!./node_modules/postcss-loader/src/index.js!./src/index.scss":
 /*!***************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/lib/loader.js!./node_modules/postcss-loader/src!./src/index.scss ***!
@@ -93,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body .abc {\\n  background: red; }\\n\\nbody .avatar {\\n  width: 150px;\\n  height: 150px;\\n  -webkit-transform: translate(100px, 100px);\\n  transform: translate(100px, 100px); }\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/index.scss?./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/lib/loader.js!./node_modules/postcss-loader/src");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body ._3GghCIZezOKYfcPQ5UQscm {\\n  background: red; }\\n\\nbody ._17cnVz87yzSOO5TpFdnLsk {\\n  width: 150px;\\n  height: 150px;\\n  -webkit-transform: translate(100px, 100px);\\n  transform: translate(100px, 100px); }\\n\", \"\"]);\n\n// Exports\nexports.locals = {\n\t\"abc\": \"_3GghCIZezOKYfcPQ5UQscm\",\n\t\"avatar\": \"_17cnVz87yzSOO5TpFdnLsk\"\n};\n\n//# sourceURL=webpack:///./src/index.scss?./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/lib/loader.js!./node_modules/postcss-loader/src");
 
 /***/ }),
 
@@ -142,6 +153,29 @@ eval("module.exports = __webpack_require__.p + \"images/avatar_bd7a45571e4b5ccb8
 
 /***/ }),
 
+/***/ "./src/avatar.scss":
+/*!*************************!*\
+  !*** ./src/avatar.scss ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-1!../node_modules/sass-loader/lib/loader.js!../node_modules/postcss-loader/src!./avatar.scss */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/lib/loader.js!./node_modules/postcss-loader/src/index.js!./src/avatar.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/avatar.scss?");
+
+/***/ }),
+
+/***/ "./src/createAvatar.js":
+/*!*****************************!*\
+  !*** ./src/createAvatar.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\");\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _avatar_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./avatar.scss */ \"./src/avatar.scss\");\n/* harmony import */ var _avatar_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_avatar_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nfunction createAvatar() {\n    var img = new Image();\n    img.src= _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default.a;\n    img.classList.add(_avatar_scss__WEBPACK_IMPORTED_MODULE_1___default.a.avatar);\n    var root = document.getElementById('root');\n    root.append(img);\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (createAvatar);\n\n//# sourceURL=webpack:///./src/createAvatar.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -150,7 +184,7 @@ eval("module.exports = __webpack_require__.p + \"images/avatar_bd7a45571e4b5ccb8
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n// import avatar from './avatar.jpg';\nconst avatar = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\")\n\nconsole.log('ddd', avatar)\nvar img=new Image();\nimg.src=avatar;\nimg.classList.add('avatar');\nvar root = document.getElementById('root');\nroot.append(img);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _createAvatar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createAvatar */ \"./src/createAvatar.js\");\n// import avatar from './avatar.jpg';\n\n\n\nconst avatar = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\")\n\nconsole.log('ddd', avatar)\nvar img=new Image();\nimg.src=avatar;\nimg.classList.add(_index_scss__WEBPACK_IMPORTED_MODULE_0___default.a.avatar);\nvar root = document.getElementById('root');\nObject(_createAvatar__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\nroot.append(img);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

@@ -25,7 +25,8 @@ module.exports = {
                 {
                     loader: 'css-loader',
                     options: {
-                        importLoaders: 2
+                        importLoaders: 2,
+                        modules: true //启用CSS模块功能
                     }
                 },
                 'sass-loader',
