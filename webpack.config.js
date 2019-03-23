@@ -11,7 +11,8 @@ module.exports = {
                 loader: 'file-loader',
                 // 若我们用原来的名称则用这种方式，【ext]就是文件的后缀
                 options: {
-                    name: '[name].[ext]'
+                    name: '[name]_[hash].[ext]',
+                    outputPath: '/images/' //把图片打包的指定的目录下
                 }
             }
         }]
