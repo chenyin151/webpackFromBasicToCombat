@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/avatar.jpg":
+/*!************************!*\
+  !*** ./src/avatar.jpg ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"bd7a45571e4b5ccb8e7c33b7ce27070a.jpg\";\n\n//# sourceURL=webpack:///./src/avatar.jpg?");
+
+/***/ }),
+
 /***/ "./src/content.js":
 /*!************************!*\
   !*** ./src/content.js ***!
@@ -115,7 +126,7 @@ eval("function Header() {\n\tvar dom = document.getElementById('root');\n\tvar h
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var Header = __webpack_require__(/*! ./header.js */ \"./src/header.js\");\nvar Content = __webpack_require__(/*! ./content.js */ \"./src/content.js\");\nvar Sidebar = __webpack_require__(/*! ./sidebar.js */ \"./src/sidebar.js\");\n\nnew Header();\nnew Content();\nnew Sidebar();\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("var Header = __webpack_require__(/*! ./header.js */ \"./src/header.js\");\nvar Content = __webpack_require__(/*! ./content.js */ \"./src/content.js\");\nvar Sidebar = __webpack_require__(/*! ./sidebar.js */ \"./src/sidebar.js\");\nvar avatar = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\");\n\nnew Header();\nnew Content();\nnew Sidebar();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

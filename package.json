@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chenyin151/webpackFromBasicToCombat#readme",
   "devDependencies": {
+    "file-loader": "^3.0.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   }
