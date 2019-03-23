@@ -30,7 +30,9 @@ module.exports = {
     plugins: [
         new htmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.html'
+            template: './src/index.html',
+            reject: false,
+            chunks: ['main1']
         })
     ]
 }
