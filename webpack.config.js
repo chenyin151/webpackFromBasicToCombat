@@ -8,11 +8,12 @@ module.exports = {
         rules: [{
             test: /\.jpg$/,
             use: {
-                loader: 'file-loader',
+                loader: 'url-loader',
                 // 若我们用原来的名称则用这种方式，【ext]就是文件的后缀
                 options: {
                     name: '[name]_[hash].[ext]',
-                    outputPath: '/images/' //把图片打包的指定的目录下
+                    outputPath: '/images/', //把图片打包的指定的目录下
+                    limit: 1024
                 }
             }
         }]
