@@ -1,5 +1,6 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development', //设置环境，有development和production两个值，production是生产环境，代码会被压缩
     entry: {
@@ -52,6 +53,7 @@ module.exports = {
             template: 'src/index.html',
             reject: 'body',
             // chunks: ['main1']
-        })
+        }),
+        new CleanWebpackPlugin(['bundle1'])
     ]
 }
