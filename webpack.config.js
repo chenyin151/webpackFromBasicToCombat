@@ -19,6 +19,12 @@ module.exports = {
             }
         },
         {
+            test: /\.(eot|ttf|svg|woff|woff2)$/,
+            use: {
+                loader: 'file-loader'
+            }
+        },
+        {
             test: /\.scss$/,
             use: [
                 'style-loader',
@@ -26,7 +32,7 @@ module.exports = {
                     loader: 'css-loader',
                     options: {
                         importLoaders: 2,
-                        modules: true //启用CSS模块功能
+                        // modules: true //启用CSS模块功能
                     }
                 },
                 'sass-loader',
