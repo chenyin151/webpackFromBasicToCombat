@@ -2,6 +2,8 @@ const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
+    // devtool: 'source-map',
+    devtool: 'source-map',
     mode: 'development', //设置环境，有development和production两个值，production是生产环境，代码会被压缩
     // entry: {
     //     'main1': './src/index.js'
@@ -9,7 +11,6 @@ module.exports = {
     // entry: './src/index.js',//打包默认生成的名字为main.js
     entry: {
         main: './src/index.js',
-        sub: './src/index.js'
     },
     module: {
         rules: [{
@@ -50,7 +51,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: 'http://www/cdn.com'
+        
     },
     plugins: [
         // htmlWebpackPlugin会在打包结束后，自动生成一个HTML文件，并把打包生成的js自动引入到这个HTML文件中
