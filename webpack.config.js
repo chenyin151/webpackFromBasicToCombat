@@ -46,11 +46,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
+        // htmlWebpackPlugin会在打包结束后，自动生成一个HTML文件，并把打包生成的js自动引入到这个HTML文件中
         new htmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.html',
-            reject: false,
-            chunks: ['main1']
+            template: 'src/index.html',
+            reject: 'body',
+            // chunks: ['main1']
         })
     ]
 }
