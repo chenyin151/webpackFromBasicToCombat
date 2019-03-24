@@ -3,8 +3,13 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development', //设置环境，有development和production两个值，production是生产环境，代码会被压缩
+    // entry: {
+    //     'main1': './src/index.js'
+    // },
+    // entry: './src/index.js',//打包默认生成的名字为main.js
     entry: {
-        'main1': './src/index.js'
+        main: './src/index.js',
+        sub: './src/index.js'
     },
     module: {
         rules: [{
@@ -43,7 +48,7 @@ module.exports = {
         }]
     }, 
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
@@ -54,6 +59,6 @@ module.exports = {
             reject: 'body',
             // chunks: ['main1']
         }),
-        new CleanWebpackPlugin(['bundle1'])
+        new CleanWebpackPlugin(['dist'])
     ]
 }
