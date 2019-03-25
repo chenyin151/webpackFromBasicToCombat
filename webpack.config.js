@@ -12,6 +12,11 @@ module.exports = {
     entry: {
         main: './src/index.js',
     },
+    devServer: {
+        contentBase: './dist',
+        port: 9000,
+        open: true
+    },
     module: {
         rules: [{
             test: /\.jpg$/,
