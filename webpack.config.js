@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 module.exports = {
     // devtool: 'source-map',
     devtool: 'source-map',
@@ -15,7 +16,9 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         port: 9000,
-        open: true
+        open: true,
+        hot: true, //开启hot module replacement这样的功能
+        hotOnly: true
     },
     module: {
         rules: [{
@@ -49,7 +52,14 @@ module.exports = {
                 },
                 'sass-loader',
                 'postcss-loader'
-            
+            ]
+        },
+        {
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'postcss-loader'
             ]
         }]
     }, 
@@ -66,6 +76,7 @@ module.exports = {
             reject: 'body',
             // chunks: ['main1']
         }),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
