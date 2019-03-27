@@ -4,8 +4,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
     // devtool: 'source-map',
-    devtool: 'source-map',
-    mode: 'development', //设置环境，有development和production两个值，production是生产环境，代码会被压缩
+    devtool: 'cheap-module-source-map',
+    mode: 'production', //设置环境，有development和production两个值，production是生产环境，代码会被压缩
     // entry: {
     //     'main1': './src/index.js'
     // },
@@ -73,6 +73,9 @@ module.exports = {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
         
+    },
+    optimization: {
+        usedExports: true //那些js模块被引用再打包
     },
     plugins: [
         // htmlWebpackPlugin会在打包结束后，自动生成一个HTML文件，并把打包生成的js自动引入到这个HTML文件中
