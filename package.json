@@ -19,8 +19,10 @@
   "homepage": "https://github.com/chenyin151/webpackFromBasicToCombat#readme",
   "devDependencies": {
     "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.0",
     "@babel/polyfill": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
+    "@babel/runtime": "^7.4.2",
     "autoprefixer": "^9.5.0",
     "autoprefixer-loader": "^3.2.0",
     "babel-loader": "^8.0.5",
@@ -39,6 +41,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "@babel/runtime-corejs2": "^7.4.2",
     "core-js": "^3.0.0"
   }
 }
