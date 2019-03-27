@@ -61,8 +61,7 @@ module.exports = {
     }, 
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
-        
+        path: path.resolve(__dirname, '../dist'),
     },
     plugins: [
         // htmlWebpackPlugin会在打包结束后，自动生成一个HTML文件，并把打包生成的js自动引入到这个HTML文件中
@@ -72,6 +71,8 @@ module.exports = {
             reject: 'body',
             // chunks: ['main1']
         }),
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['dist'], {
+            root: path.resolve(__dirname, '../')
+        }),
     ]
 }
