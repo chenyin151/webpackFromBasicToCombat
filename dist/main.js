@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "5516c57d790b2b9311db";
+/******/ 	var hotCurrentHash = "5342105df2f78665d9f0";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -797,25 +797,11 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
+/*! no static exports found */
 /*! all exports used */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n// Tree Shaking只支持ESModule，不支持require方式引用\n\nObject(_math_js__WEBPACK_IMPORTED_MODULE_0__[/* add */ \"a\"])(1, 2);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/YjYzNSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUcmVlIFNoYWtpbmflj6rmlK/mjIFFU01vZHVsZe+8jOS4jeaUr+aMgXJlcXVpcmXmlrnlvI/lvJXnlKhcbmltcG9ydCB7YWRkfSBmcm9tICcuL21hdGguanMnO1xuYWRkKDEsMik7Il0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/index.js\n");
-
-/***/ }),
-
-/***/ "./src/math.js":
-/*!*********************!*\
-  !*** ./src/math.js ***!
-  \*********************/
-/*! exports provided: add, minus */
-/*! exports used: add */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return add; });\n/* unused harmony export minus */\nconst add = (a, b) => {\n  console.log(a + b);\n};\nconst minus = (a, b) => {\n  console.log(a - b);\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbWF0aC5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9tYXRoLmpzPzVhMDMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IGFkZCA9IChhLGIpID0+IHtcbiAgICBjb25zb2xlLmxvZyhhK2IpO1xufVxuZXhwb3J0IGNvbnN0IG1pbnVzID0gKGEsYik9PntcbiAgICBjb25zb2xlLmxvZyhhLWIpO1xufSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/math.js\n");
+eval("// Tree Shaking只支持ESModule，不支持require方式引用\n// import {add} from './math.js';\n// add(1,2);\nconsole.log(window._.join(['a', 'b', 'c'], '***'));//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/YjYzNSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBUcmVlIFNoYWtpbmflj6rmlK/mjIFFU01vZHVsZe+8jOS4jeaUr+aMgXJlcXVpcmXmlrnlvI/lvJXnlKhcbi8vIGltcG9ydCB7YWRkfSBmcm9tICcuL21hdGguanMnO1xuLy8gYWRkKDEsMik7XG5cbmNvbnNvbGUubG9nKHdpbmRvdy5fLmpvaW4oWydhJywnYicsJ2MnXSwnKioqJykpOyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBRUEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/index.js\n");
 
 /***/ })
 

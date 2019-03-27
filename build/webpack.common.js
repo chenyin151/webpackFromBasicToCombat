@@ -8,7 +8,9 @@ module.exports = {
     // },
     // entry: './src/index.js',//打包默认生成的名字为main.js
     entry: {
-        main: './src/index.js',
+        lodash: './src/lodash.js',
+        main: './src/index.js'
+        
     },
     module: {
         rules: [{
