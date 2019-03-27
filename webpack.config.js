@@ -61,7 +61,11 @@ module.exports = {
             options: {
                 "presets": [["@babel/preset-env",{
                     "useBuiltIns": "usage",
-                    "corejs":3
+                    "corejs":3,
+                    targets: {
+                        chrome: "67" //告诉webpack我们打包的目标对象主要是针对chrome v67以上的用户，
+                        // webpack会自动判断我们需不需要用babel进行语义转码
+                    }
                 }]]
             }
             
