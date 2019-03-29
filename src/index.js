@@ -3,10 +3,9 @@
 // add(1,2);
 
 // 同步代码分割
-// import _ from 'lodash';
-// console.log(_.join(['a','b','c'],'***'));
-
 import _ from 'lodash';
+console.log(_.join(['a','b','c'],'***'));
+
 // function getComponent() {
 //     return import(/* webpackChunkName:"lodash" */'lodash').then(({default: _}) => {
 //         var element = document.createElement('div');

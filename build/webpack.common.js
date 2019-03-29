@@ -66,12 +66,13 @@ module.exports = {
     optimization: {
         splitChunks: {
             chunks: 'all',
+            minSize: 300,
             cacheGroups: {
                 vendors: {
-                    test: /[//\]node_modules[\\/]/,
-                    priority: -10,
-                    filename: 'lodash.js'
-                }
+                    test: /[\\/]node_modules[\\/]/,
+                    filename: 'lodash'
+                },
+                default: false
             }
         }
     },
