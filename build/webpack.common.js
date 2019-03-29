@@ -63,6 +63,18 @@ module.exports = {
         filename: '[name].js',
         path: path.resolve(__dirname, '../dist'),
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            cacheGroups: {
+                vendors: {
+                    test: /[//\]node_modules[\\/]/,
+                    priority: -10,
+                    filename: 'lodash.js'
+                }
+            }
+        }
+    },
     plugins: [
         // htmlWebpackPlugin会在打包结束后，自动生成一个HTML文件，并把打包生成的js自动引入到这个HTML文件中
         new htmlWebpackPlugin({

@@ -21,6 +21,7 @@
   "homepage": "https://github.com/chenyin151/webpackFromBasicToCombat#readme",
   "devDependencies": {
     "@babel/core": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.4.0",
     "@babel/polyfill": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
@@ -28,7 +29,6 @@
     "autoprefixer": "^9.5.0",
     "autoprefixer-loader": "^3.2.0",
     "babel-loader": "^8.0.5",
-    "babel-plugin-dynamic-import-webpack": "^1.1.0",
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
