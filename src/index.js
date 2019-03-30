@@ -16,3 +16,6 @@ console.log(_.join(['a','b','c'],'***'));
 // getComponent().then(element => {
 //     document.body.appendChild(element);
 // })
+
+// import './test.js';
+// console.log(test.name);

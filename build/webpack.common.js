@@ -67,12 +67,24 @@ module.exports = {
         splitChunks: {
             chunks: 'all',
             minSize: 300,
+            minChunks: 1, //若有两个地方引用就进行分包
+            maxAsyncRequests: 5, //打包前5个进行代码分割，超出5个就不会进行分割了
+            maxInitialRequests: 3, //页面入口文件若加载多个js文件的话，前3个做代码分割，若超出就不进行代码分割了
+            automaticNameDelimiter: '~', //名字之间的连接符
+            name: true, //让cacheGroups里面的filename有效
             cacheGroups: {
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
-                    filename: 'lodash'
+                    filename: 'lodash',
+                    priority: -10
                 },
-                default: false
+                default: {
+                    priority: -20,
+                    reuseExistingChunk: true, //若引用的模块已经被打包过，就不需要再次打包，而是直接引用之前打包的文件就可以了，举个例子来说，有a.js和b.js，a.js中引用了b.js，然后b.js在外面又被引用了一下，b.js在被a.js引用的时候已
+                    // 经被打包的common.js中了，第二次被引用就不需要被打包了，直接引用直接打包的代码即可
+                    filename: 'common.js'
+                }
+
             }
         }
     },
