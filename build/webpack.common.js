@@ -75,7 +75,7 @@ module.exports = {
             cacheGroups: {
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
-                    filename: 'lodash',
+                    filename: 'lodash1',
                     priority: -10
                 },
                 default: {
@@ -84,7 +84,6 @@ module.exports = {
                     // 经被打包的common.js中了，第二次被引用就不需要被打包了，直接引用直接打包的代码即可
                     filename: 'common.js'
                 }
-
             }
         }
     },
