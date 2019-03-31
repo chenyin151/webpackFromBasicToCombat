@@ -65,7 +65,7 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            chunks: 'all',
+            chunks: 'all', //什么是chunk?在打包文件的时候，每一个js文件就是一个chunk
             minSize: 300,
             minChunks: 1, //若有两个地方引用就进行分包
             maxAsyncRequests: 5, //打包前5个进行代码分割，超出5个就不会进行分割了
@@ -75,7 +75,7 @@ module.exports = {
             cacheGroups: {
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
-                    filename: 'lodash1',
+                    filename: 'lodash1.js',
                     priority: -10
                 },
                 default: {
