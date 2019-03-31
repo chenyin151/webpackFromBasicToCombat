@@ -1,6 +1,7 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     // entry: {
@@ -30,37 +31,14 @@ module.exports = {
             }
         },
         {
-            test: /\.scss$/,
-            use: [
-                'style-loader',
-                {
-                    loader: 'css-loader',
-                    options: {
-                        importLoaders: 2,
-                        // modules: true //启用CSS模块功能
-                    }
-                },
-                'sass-loader',
-                'postcss-loader'
-            ]
-        },
-        {
             test: /\.js$/,
             loader: 'babel-loader',
             exclude: /node_modules/,
-            
         },
-        {
-            test: /\.css$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'postcss-loader'
-            ]
-        }]
-    }, 
+    ]}, 
     output: {
         filename: '[name].js',
+        chunkFilename: '[name].chunks.js', //引入的文件的打包后的名称
         path: path.resolve(__dirname, '../dist'),
     },
     optimization: {
@@ -98,5 +76,9 @@ module.exports = {
         new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
         }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[name].chunk.css'
+        })
     ]
 }

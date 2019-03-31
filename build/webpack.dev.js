@@ -13,6 +13,32 @@ const devConfig = {
         hot: true, //开启hot module replacement这样的功能
         hotOnly: true
     },
+    module: {
+        rules: [{
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2,
+                            // modules: true //启用CSS模块功能
+                        }
+                    },
+                    'sass-loader',
+                    'postcss-loader'
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader'
+                ]
+            }
+        ]
+    },
     
     optimization: {
         usedExports: true //那些js模块被引用再打包
