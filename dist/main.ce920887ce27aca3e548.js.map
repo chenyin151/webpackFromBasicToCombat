@@ -1,0 +1,1 @@
+{"version":3,"file":"main.ce920887ce27aca3e548.js","sources":["webpack:///./src/index.js"],"sourcesContent":["console.log(this===window)"],"mappings":";;;;AAAA;;;A","sourceRoot":""}
