@@ -40,6 +40,10 @@ prodConfig = {
             ]
         },]
     },
+    output: {
+        filename: '[name].[contenthash].js',
+        chunkFilename: '[name].[contenthash].js'
+    },
     optimization: {
         minimizer: [new OptimizeCssAssetsWebpackPlugin({})]
     }

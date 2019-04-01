@@ -39,7 +39,10 @@ const devConfig = {
             }
         ]
     },
-    
+    output: {
+        filename: '[name].js',
+        chunkFilename: '[name].js', //引入的文件的打包后的名称
+    },
     optimization: {
         usedExports: true //那些js模块被引用再打包
     },

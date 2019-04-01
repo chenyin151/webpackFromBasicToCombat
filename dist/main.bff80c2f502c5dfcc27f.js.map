@@ -1,0 +1,1 @@
+{"version":3,"file":"main.bff80c2f502c5dfcc27f.js","sources":["webpack:///./src/index.js"],"sourcesContent":["import _ from 'lodash';\nimport $ from 'jquery';\n\nconst dom = $('div');\ndom.html(_.join(['dell', 'lee1', 'hello'],'---'));\n$('body').append(dom);"],"mappings":";;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AACA;AAEA;AACA;AACA;;;;A","sourceRoot":""}

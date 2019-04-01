@@ -146,11 +146,9 @@
 /******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
 /******/
-/******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([2,0]);
-/******/ 	// run deferred modules when ready
-/******/ 	return checkDeferredModules();
+/******/ 	// run deferred modules from other chunks
+/******/ 	checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ([]);
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=runtime.4f3f12f593141a0bf20c.js.map
