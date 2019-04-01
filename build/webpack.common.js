@@ -2,6 +2,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     // entry: {
@@ -41,6 +42,7 @@ module.exports = {
     },
     performance: false,
     optimization: {
+
         // 适配老版本，新版本可不加
         runtimeChunk: {
             name: 'runtime'
@@ -82,6 +84,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[name].chunk.css'
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            _: 'lodash'
         })
     ]
 }
