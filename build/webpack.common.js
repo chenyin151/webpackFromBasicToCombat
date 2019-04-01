@@ -3,8 +3,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
+const devConfig = require('./webpack.dev');
+const prodConfig = require('./webpack.prod');
 
-module.exports = {
+const commonConfig= {
     // entry: {
     //     'main1': './src/index.js'
     // },
@@ -94,4 +97,11 @@ module.exports = {
             _: 'lodash'
         })
     ]
+}
+module.exports = (env) => {
+    if (env && env.production) {
+        return merge(commonConfig, prodConfig);
+    } else {
+        return merge(commonConfig, devConfig);
+    }
 }

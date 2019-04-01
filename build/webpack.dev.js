@@ -1,6 +1,4 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
-const commonConfig = require('./webpack.common');
 const devConfig = {
     // devtool: 'source-map',
     devtool: 'cheap-module-eval-source-map',
@@ -51,4 +49,4 @@ const devConfig = {
         new webpack.HotModuleReplacementPlugin()
     ]
 }
-module.exports = merge(commonConfig, devConfig);
+module.exports = devConfig;
