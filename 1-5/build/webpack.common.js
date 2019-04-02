@@ -1,8 +1,6 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 const merge = require('webpack-merge');
 const devConfig = require('./webpack.dev');
 const prodConfig = require('./webpack.prod');
@@ -38,8 +36,6 @@ const commonConfig= {
             test: /\.js$/,
             use: [{
                 loader: 'babel-loader'
-            },{
-                loader: 'imports-loader?this=>window'
             }],
             exclude: /node_modules/
         },
@@ -87,14 +83,6 @@ const commonConfig= {
         }),
         new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
-        }),
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[name].chunk.css'
-        }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            _: 'lodash'
         })
     ]
 }

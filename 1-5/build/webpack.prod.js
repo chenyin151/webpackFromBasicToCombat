@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path')
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 prodConfig = {
@@ -44,6 +44,16 @@ prodConfig = {
     },
     optimization: {
         minimizer: [new OptimizeCssAssetsWebpackPlugin({})]
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[name].chunk.css'
+        }),
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true, //Service Worker 被激活后使其立即获得页面控制权
+            skipWaiting: true //强制等待中的 Service Worker 被激活
+        })
+    ]
 }
 module.exports = prodConfig;

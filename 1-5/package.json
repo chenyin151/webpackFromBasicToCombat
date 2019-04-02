@@ -7,7 +7,7 @@
     "*.css"
   ],
   "scripts": {
-    "dev-build": "webpack --config ./build/webpack.common.js",
+    "start": "http-server dist",
     "dev": "webpack-dev-server --config ./build/webpack.common.js",
     "build": "webpack --env.production --config ./build/webpack.common.js"
   },
@@ -49,7 +49,8 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "workbox-webpack-plugin": "^4.1.1"
   },
   "dependencies": {
     "@babel/preset-react": "^7.0.0",

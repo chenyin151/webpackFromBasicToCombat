@@ -1,1 +1,0 @@
-{"version":3,"file":"main.628ccf08ebd64cf13cb0.js","sources":["webpack:///./src/index.js"],"sourcesContent":["/*** IMPORTS FROM imports-loader ***/\n(function() {\n\nconsole.log(this===window)\n}.call(window));"],"mappings":";;;;AAAA;AACA;AAEA;AACA;;;A","sourceRoot":""}
