@@ -9,7 +9,23 @@ const devConfig = {
         port: 9000,
         open: true,
         hot: true, //开启hot module replacement这样的功能
-        hotOnly: true
+        hotOnly: true,
+        proxy: {
+            '/react/api': {
+                target: 'http://www.dell-lee.com',
+                // 接口拦截，这里的主要作用是当我们请求的接口是一个html文件的时候直接跳过下面的所有处理，
+                // 什么都不做，跳过这次转发
+                bypass: function(req, res, proxyOptions) {
+                    if(req.headers.accept.indexOf('html') !== -1) {
+                        console.log('Skipping Proxy for browser request.');
+                        return false
+                    }
+                },
+                pathRewrite: {
+                    'header.json': 'demo.json'
+                }
+            }
+        }
     },
     module: {
         rules: [{
