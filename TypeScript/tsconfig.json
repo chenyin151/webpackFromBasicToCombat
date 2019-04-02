@@ -1,0 +1,14 @@
+{
+    // 编译过程项
+    "compilerOptions": {
+        // 把TS打包到dist目录下,实际上不写也行，因为我们已经在webpack.config.js中
+        // 已经设置了
+        "outDir": "./dist",
+        // 我们是用ESModule的引用的形式，这也我们可以用import来引入模块
+        "module": "es6",
+        // 我们要把TS打包成什么语法
+        "target": "es5",
+        // 允许我们在TS语法中引用JS的语法
+        "allowJs": true
+    }
+}
