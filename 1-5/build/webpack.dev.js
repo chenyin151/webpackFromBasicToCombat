@@ -10,6 +10,7 @@ const devConfig = {
         open: true,
         hot: true, //开启hot module replacement这样的功能
         hotOnly: true,
+        historyApiFallback: true,
         proxy: {
             '/react/api': {
                 target: 'http://www.dell-lee.com',

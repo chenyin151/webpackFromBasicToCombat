@@ -15,16 +15,27 @@
 
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter, Route} from 'react-router-dom';
 import axios from 'axios';
+import List from './list';
+import Home from './home';
 class App extends Component {
-    componentDidMount() {
-        axios.get('/react/api/header.json')
-        .then(res => {
-            console.log(res)
-        })
-    }
+    // componentDidMount() {
+    //     axios.get('/react/api/header.json')
+    //     .then(res => {
+    //         console.log(res)
+    //     })
+    // }
     render() {
-        return <div>Hello World</div>
+        // return <div>Hello World</div>
+        return (
+            <BrowserRouter>
+                <div>
+                    <Route path='/' exact component={Home} />
+                    <Route path='/list' exact component={List} />
+                </div>
+            </BrowserRouter>
+        )
     }
 }
 ReactDom.render(<App />,document.getElementById('root'));
