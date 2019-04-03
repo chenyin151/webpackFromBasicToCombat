@@ -34,9 +34,10 @@ const commonConfig= {
         },
         {
             test: /\.js$/,
-            use: [{
-                loader: 'babel-loader'
-            }],
+            use: [
+                'babel-loader',
+                'eslint-loader'
+            ],
             exclude: /node_modules/
         },
     ]}, 
