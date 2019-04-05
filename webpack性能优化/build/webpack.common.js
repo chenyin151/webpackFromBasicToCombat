@@ -4,7 +4,33 @@ const path = require('path');
 const merge = require('webpack-merge');
 const devConfig = require('./webpack.dev');
 const prodConfig = require('./webpack.prod');
-
+const webpack = require('webpack');
+const addAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
+const fs = require("fs");
+const plugins = [
+    new htmlWebpackPlugin({
+        filename: 'index.html',
+        template: 'src/index.html',
+        reject: 'body',
+        // chunks: ['main1']
+    }),
+    new CleanWebpackPlugin(['dist'], {
+        root: path.resolve(__dirname, '../')
+    })
+];
+const files = fs.readdirSync(path.resolve(__dirname, "../dll"));
+files.forEach(file => {
+    if (/.*\.dll.js/.test(file)) {
+        plugins.push(new addAssetHtmlWebpackPlugin({
+            filepath: path.resolve(__dirname, '../dll', file)
+        }))
+    }
+    if (/.*\.manifest.json/.test(file)) {
+        plugins.push(new webpack.DllReferencePlugin({
+            manifest: path.resolve(__dirname, '../dll', file)
+        }))
+    }
+})
 const commonConfig= {
     // entry: {
     //     'main1': './src/index.js'
@@ -16,9 +42,6 @@ const commonConfig= {
     resolve: {
         extensions: ['.js', '.jsx'],
         mainFiles: ["index", "child"],
-        alias: {
-            delllee: path.resolve(__dirname, '../src/child')
-        }
     },
     module: {
         rules: [{
@@ -81,18 +104,24 @@ const commonConfig= {
             // }
         }
     },
-    plugins: [
-        // htmlWebpackPlugin会在打包结束后，自动生成一个HTML文件，并把打包生成的js自动引入到这个HTML文件中
-        new htmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'src/index.html',
-            reject: 'body',
-            // chunks: ['main1']
-        }),
-        new CleanWebpackPlugin(['dist'], {
-            root: path.resolve(__dirname, '../')
-        })
-    ]
+    // plugins: [
+    //     // htmlWebpackPlugin会在打包结束后，自动生成一个HTML文件，并把打包生成的js自动引入到这个HTML文件中
+        
+        
+    //     new addAssetHtmlWebpackPlugin({
+    //         filepath: path.resolve(__dirname, '../dll/vendors.dll.js') 
+    //     }),
+    //     new addAssetHtmlWebpackPlugin({
+    //         filepath: path.resolve(__dirname, '../dll/react.dll.js')
+    //     }),
+    //     new webpack.DllReferencePlugin({
+    //         manifest:path.resolve(__dirname, '../dll/vendors.manifest.json')
+    //     }),
+    //     new webpack.DllReferencePlugin({
+    //         manifest: path.resolve(__dirname, '../dll/react.manifest.json')
+    //     })
+    // ]
+    plugins: plugins
 }
 module.exports = (env) => {
     if (env && env.production) {

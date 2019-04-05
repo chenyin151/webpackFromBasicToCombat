@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // import Child from './child/child';
-import Child from 'delllee';
+import _ from 'lodash';
 
 class App extends Component {
     render() {
         return (
             <div>
-                <div>This is App121111</div>
-                <Child />
+                <div>{_.join(['This', 'is', 'a', 'app'], ' ')}</div>
             </div>
         )
     }
