@@ -4,7 +4,7 @@ module.exports = {
     entry: {
         vendors: ["react-dom", "lodash"],
         react: ["react"],
-        jquery: ["jquery"]
+        // jquery: ["jquery"]
     },
     output: {
         filename: "[name].dll.js",
