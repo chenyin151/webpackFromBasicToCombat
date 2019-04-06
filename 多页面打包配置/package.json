@@ -1,0 +1,69 @@
+{
+  "name": "basictocombat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "start": "http-server dist",
+    "dev": "webpack-dev-server --config ./build/webpack.common.js",
+    "build": "webpack --env.production --config ./build/webpack.common.js",
+    "build:dll": "webpack --config ./build/webpack.dll.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenyin151/webpackFromBasicToCombat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenyin151/webpackFromBasicToCombat/issues"
+  },
+  "homepage": "https://github.com/chenyin151/webpackFromBasicToCombat#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.0",
+    "@babel/polyfill": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/runtime": "^7.4.2",
+    "add-asset-html-webpack-plugin": "^3.1.3",
+    "autoprefixer": "^9.5.0",
+    "autoprefixer-loader": "^3.2.0",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^1.0.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "imports-loader": "^0.8.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "react-router-dom": "^5.0.0",
+    "sass-loader": "^7.1.0",
+    "scss-loader": "0.0.1",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1",
+    "workbox-webpack-plugin": "^4.1.1"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime-corejs2": "^7.4.2",
+    "core-js": "^3.0.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  }
+}
