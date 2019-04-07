@@ -10,7 +10,15 @@ class CopyrightWebpackPlugin {
     apply(compiler) {
         debugger;
         compiler.hooks.emit.tapAsync('CopyrightWebpackPlugin', (compilation, cb) => {
-            console.log('121212')
+            compilation.assets['copyright.txt'] = {
+                source: function() {
+                    return 'copyright by Dell Lee'
+                },
+                size: function() {
+                    return 21;
+                }
+            }
+            cb();
         })
     }
 }
