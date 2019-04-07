@@ -1,11 +1,5 @@
 const loaderUtils = require('loader-utils');
 module.exports = function(source) {
     const options = loaderUtils.getOptions(this);
-    const callback = this.async();
-    setTimeout(() => {
-        const result = source.replace('dell', options.name);
-        callback(null, result);
-    }, 3000)
-    
-    // return source.replace('dell', options.name);
+    return source.replace('lee', 'world');
 }

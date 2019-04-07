@@ -10,8 +10,11 @@ module.exports = {
                 test: /\.js$/,
                 use: [{
                     loader: path.resolve(__dirname, './loaders/replaceLoader'),
+                    
+                }, {
+                    loader: path.resolve(__dirname, './loaders/replaceLoaderAsync'),
                     options: {
-                        name: 'lee111'
+                        name: 'lee'
                     }
                 }]
             }
