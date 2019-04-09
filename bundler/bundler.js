@@ -26,10 +26,18 @@ const moduleAnalyser = (filename) => {
         presets: ['@babel/preset-env']
     })
     console.log('111',dependencies, code);
+    const makeDependenciesGraph = (entry) => {
+        const entryModule = moduleAnalyser(entry);
+        const graphArray = [entryModule];
+        for (let i = 0; i < graphArray.length;i++){
+
+        }
+    }
     return {
         filename,
         dependencies,
         code
     }
 }
-moduleAnalyser('./src/index.js');
+// moduleAnalyser('./src/index.js'); 
+const graphInfo = makeDependenciesGraph('./src/index.js');
