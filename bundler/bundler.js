@@ -5,11 +5,10 @@ const babel = require('@babel/core');
 const traverse = require('@babel/traverse').default; //默认是ESModule,若想使用export default语法则必须.default
 const moduleAnalyser = (filename) => {
     const content = fs.readFileSync(filename, 'utf-8');
+    const dependencies = {};
     const ast = parser.parse(content, {
         sourceType: 'module'
     });
-    // const dependencies = [];
-    const dependencies = {};
     // 这里对抽象语法树进行遍历,然后我们需要找出类型为ImportDeclaration这样的元素
     traverse(ast, {
         ImportDeclaration( { node }) {
@@ -25,19 +24,62 @@ const moduleAnalyser = (filename) => {
     const { code } = babel.transformFromAst(ast, null, {
         presets: ['@babel/preset-env']
     })
-    console.log('111',dependencies, code);
-    const makeDependenciesGraph = (entry) => {
-        const entryModule = moduleAnalyser(entry);
-        const graphArray = [entryModule];
-        for (let i = 0; i < graphArray.length;i++){
-
-        }
-    }
+    // console.log(filename, dependencies)
     return {
         filename,
         dependencies,
         code
     }
 }
+    // const dependencies = [];
+
+const makeDependenciesGraph = (entry) => {
+    
+    const entryModule = moduleAnalyser(entry);
+    // console.log('hello')
+    const graphArray = [entryModule];
+    for (let i = 0; i < graphArray.length;i++){
+        const item = graphArray[i];
+        const { dependencies } = item;
+        // console.log('deeee', dependencies);
+        if (dependencies) {
+            for (let j in dependencies) {
+                graphArray.push(moduleAnalyser(dependencies[j]));
+            }
+        }
+    }
+    const graph = {};
+    graphArray.forEach(item => {
+        graph[item.filename] = {
+            dependencies: item.dependencies,
+            code: item.code
+        }
+    })
+    console.log('graph', graph)
+    return graph;
+}
+const generateCode = (entry) => {
+    const graph = JSON.stringify(makeDependenciesGraph(entry));
+    debugger;
+    console.log('graph', graph['./src/index.js'])
+    return `
+        (function(graph) {
+            function require(module){
+                function localRequire(relativePath) {
+                    return require(graph[module].dependencies[relativePath])
+                }
+                var exports = {};
+                (function(require,exports,code){
+                    eval(code)
+                })(localRequire, exports, graph[module].code);
+                return exports;
+            };
+            require('${entry}')
+        })(${graph});
+    `
+}
 // moduleAnalyser('./src/index.js'); 
-const graphInfo = makeDependenciesGraph('./src/index.js');
+// const graphInfo = makeDependenciesGraph('./src/index.js');
+// console.log(graphInfo)
+const code = generateCode('./src/index.js');
+console.log('code', code);
